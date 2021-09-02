@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>{% block title %}Gestion de carburant{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+    {% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+              crossorigin="anonymous">
+{#        <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">#}
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<header class="header" id="header">
+    <div class="header_toggle"><i class='bx bx-menu' id="header-toggle"></i></div>
+    <div class="header_img"><img src="https://i.imgur.com/hczKIze.jpg" alt=""></div>
+</header>
+<div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div>
+            <a href="/" class="nav_logo">
+                <i class='bx bx-home nav_logo-icon'></i>
+                <span class="nav_logo-name">SaCoGa</span>
+            </a>
+            <div class="nav_list">
+                <a href="{#{{ path('vehicule_crud_index') }}#}" class="nav_link active">
+                    <i class='bx bx-grid-alt nav_icon'></i>
+                    <span class="nav_name">Tableau de bord</span>
+                </a>
+                <a href="{#{{ path('suivi_conso') }}#}" class="nav_link">
+                    <i class='bx bx-data nav_icon'></i>
+                    <span class="nav_name">Résultat Conso</span>
+                </a>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-archive nav_icon'></i>
+                    <span class="nav_name">Historique</span>
+                </a>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                    <span class="nav_name">Graphiques</span>
+                </a>
+            </div>
+        </div>
+        <a href="#" class="nav_link">
+            <i class='bx bx-log-out nav_icon'></i>
+            <span class="nav_name">SignOut</span>
+        </a>
+    </nav>
+</div>
+
+
+{% block body %}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
 </html>

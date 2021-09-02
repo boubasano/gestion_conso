@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion de consommation de carburant{% endblock %}
+
+{% block body %}
+    <!--Container Main start-->
+    <div class="height-100 bg-white parties-templates">
+        <h1 class="titre">Consommation carburant</h1>
+        <hr>
+        <p> Cette application a pour but de suivre la consommation de carburant à chaque remplissage de carburant <br>
+            L'utilisateur devra dans un premier temps rentrer les informations de consomamation de son véhicule à savoir:
+            <br>
+
+            - le type de véhicule : auto, moto, pickup, camion, <br><br>
+            - le type de carburant utilisé: Diesel, essence, gaz, .... <br><br>
+
+            - la marque du véhicule : exemple ( Opel Antara)<br>
+            - la capacité de reservoir<br>
+            - la consommation mixte (rural et urbain combiné): cette information est renseignée par le constructeur<br><br>
+
+            A partir de ces informations, à chaque remplissage de carburant, l'autonomie de la voiture sera affichée.
+            <br>
+            Infos à chaque remplissage: <br>
+                - kilomètre actuel <br>
+                - en fonction du type de carburant renseigné à la création d'un nouveau véhicule, il va renseigner le type
+            <br> de carburant à la pompe. Exemple : <br>
+                    * Diesel => B7 (Gazole) <br>
+                             => B10 (Nouveau gazole) <br>
+                             => XTL (Gazole de synthèse) <br>
+                    * Essence => E10 (Sans Plomb 95) <br>
+                              => E5 (Sans Plomb 95 - 98) <br>
+                              => E85 (Bioéthanol ) <br>
+                    * Carburants gazeux => LNG (Gaz Naturel Liquéfié) <br>
+                                        => H2 (Hydrogène) <br>
+                                        => CNG (Gaz Naturel Comprimé) <br>
+                                        => GPL <br>
+            <br>
+            - si l'utilisateur atteint cette autonomie fixée, il lui sera notifiée de combien il a dépassé cette autonomie
+            <br>
+            (ce qui signifiera pour lui un gain de carburant en litre et en argent)<br>
+            - si l'utilisateur n'a pas atteint cette autonomie fixée, il lui sera notifiée de combien il a manqué pour atteindre cette autonomie
+            <br>
+            (ce qui signfiera pour lui une perte de carburant en litre et en argent)
+            <br><br>
+            le montant perdu tiendra compte du prix au litre au dernier remplissage.
+        </p>
+    </div>
+    <!--Container Main end-->
+{% endblock %}
